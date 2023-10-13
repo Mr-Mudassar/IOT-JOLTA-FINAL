@@ -322,7 +322,7 @@ const ManageUser = () => {
               </a>
             </li>
             {numbers.map((num) => (
-              <li className={`text-xs rounded-3xl px-3 py-2 page-item ${currentPage === num ? 'bg-green-500' : ''}`} key={num}>
+              <li className={`text-xs rounded-3xl px-3 py-2 page-item ${currentPage === num ? 'bg-green-500 text-white' : ''}`} key={num}>
                 <a
                   className='page-item cursor-pointer'
                   onClick={() => changeCpage(num)}>
@@ -345,7 +345,7 @@ const ManageUser = () => {
         <div>
           {/* Added dropdown here */}
           <select
-            className={`p-1 my-2 border-1 rounded-md ${selectedPage !== currentPage ? 'bg-green-500' : ''}`}
+            className={`p-1 my-2 border-1 rounded-md ${selectedPage !== currentPage ? 'bg-green-500 text-white' : ''}`}
             value={currentPage} // Set the value to currentPage, not setSelectedPage
             onChange={handlePageChange}
           >

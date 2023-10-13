@@ -105,11 +105,8 @@ export default function TopBar({ showNav, setShowNav }) {
           >
             <Popover.Panel className="absolute -right-16  z-50 mt-2 bg-stone-800 shadow-sm rounded max-w-xs w-screen">
               <div className="relative p-3">
-                <div className="flex justify-between items-center w-full">
-                  <p className="text-white font-medium">Notifications & Alerts</p>
-                  <a className="text-sm text-green-600" href="#">
-                    Mark all as read
-                  </a>
+                <div className="flex justify-center items-center w-full">
+                  <p className="text-white font-medium ">Notifications & Alerts</p>      
                 </div>
                 <div className="mt-4 grid gap-4 grid-cols-1 overflow-hidden">
                   <div>
