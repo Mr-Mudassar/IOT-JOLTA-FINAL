@@ -133,7 +133,7 @@ const CustomerSetup = () => {
         <table className="table table-sm border-2">
           <thead>
             <tr>
-              <th className='border-2'>Number</th>
+              <th className='border-2 text-center'>Id</th>
               <th className='border-2'>Long Name</th>
               <th className='border-2'>Short Name</th>
               <th className='border-2'>Country</th>
@@ -144,11 +144,11 @@ const CustomerSetup = () => {
           <tbody>
             {records.map((user, index) => (
               <tr key={index} className='border-2'>
-                <th className='border-2'>{user.num}</th>
+                <th className='border-2 text-center'>{user.num}</th>
                 <td className='border-2'>{user.name}</td>
                 <td className='border-2'>{user.job}</td>
                 <td className='border-2'>{user.company}</td>
-                <td className='border-2'><div className='flex justify-between'>{user.location}<div className='w-5'><ClipboardDocumentIcon className='text-black'/></div></div></td>
+                <td className='border-2'><div className='flex justify-between'>{user.location}<div className='w-5'><ClipboardDocumentIcon className='text-green-600'/></div></div></td>
                 <td className='border-2 text-center'>
                   <button onClick={() => handleEditClick(user)} className='border-2 rounded-lg m-0 p-2 bg-stone-300 font-semibold'>Edit User</button>
                 </td>

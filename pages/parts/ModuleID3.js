@@ -56,6 +56,7 @@ const ModuleID3 = () => {
     const lineChartDataOverall = {
         labels: ['12am', '01am', '02am', '03am', '04am', '05am', '06am', '07am', '08am', '09am', '10am', '11am', '12am', '01am', '02am', '03am', '04am', '05am', '06am', '07am', '08am'],
         datasets: filteredData.map((overall) => ({
+            label: "Overall",
             data: overall.graphDataVoltage, // Assuming user.graphData is an array of data points
             borderColor: 'red',
             borderWidth: 3,

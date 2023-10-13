@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react";
 import Link from "next/link";
-import { GlobeAltIcon, UsersIcon, PresentationChartLineIcon, Cog8ToothIcon, ExclamationTriangleIcon, CircleStackIcon, PencilIcon, CreditCardIcon, UserIcon } from "@heroicons/react/24/solid";
+import { GlobeAltIcon, UsersIcon, PresentationChartLineIcon, Cog8ToothIcon, ExclamationTriangleIcon, CircleStackIcon, PencilIcon, CreditCardIcon, UserIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { useRouter } from "next/router";
@@ -128,17 +128,18 @@ const SideBar = forwardRef(({ showNav }, ref) => {
         <Menu as="div" className="relative text-left">
           <div>
 
-            <Menu.Button className={`pl-6 py-3 mx-3 px-20  rounded text-left cursor-pointer mb-3 items-left      transition-colors   ${isSubmenuActive
+            <Menu.Button className={`pl-6 py-3 mx-3 px-14 rounded text-left cursor-pointer mb-3 items-left      transition-colors   ${isSubmenuActive
               ? "bg-green-600 text-green-900 font-bold"
               : "text-white hover:bg-green-600 hover:text-white "
               }`}>
-              <div className="flex flex-direction-row">
+              <div className="flex flex-direction-row ">
                 <div className="mr-2">
                   < Cog8ToothIcon className="h-7 w-7" />
                 </div>
                 <div>
-                  <p>Settings</p>
+                  <p className="flex justify-between">Settings</p>
                 </div>
+                  <ChevronDownIcon className="h-4 w-4 ml-2 mt-1.5 flex"/>
               </div>
             </Menu.Button>
 

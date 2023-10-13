@@ -133,7 +133,7 @@ const ManageUser = () => {
         <table className="table table-sm border-2">
           <thead>
             <tr>
-              <th className='border-2'>Number</th>
+              <th className='border-2 text-center'>Id</th>
               <th className='border-2'>Name</th>
               <th className='border-2'>Company Name</th>
               <th className='border-2'>User Name</th>
@@ -146,7 +146,7 @@ const ManageUser = () => {
           <tbody>
             {records.map((user, index) => (
               <tr key={index} className='border-2'>
-                <th className='border-2'>{user.num}</th>
+                <th className='border-2 text-center'>{user.num}</th>
                 <td className='border-2'>{user.name}</td>
                 <td className='border-2'>{user.job}</td>
                 <td className='border-2'>{user.company}</td>
