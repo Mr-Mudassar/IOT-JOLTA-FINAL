@@ -2,11 +2,10 @@ import { NextResponse } from 'next/server';
 
 export function middleware(request) {
   console.log('Middleware Executed');
-  
+
   const loginPaths = [
      '/login/UserLogin',
-     '/login/SetPassword',
-    '/login/PasswordReset',
+     'login/Password/Reset',
      '/login/ForgetPassword'
   ];
 
