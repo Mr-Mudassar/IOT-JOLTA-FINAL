@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/solid";
+import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon, ClipboardDocumentIcon } from "@heroicons/react/24/solid";
 
 const CustomerSetup = () => {
   const [data, setData] = useState([]);
@@ -126,10 +126,10 @@ const CustomerSetup = () => {
   };
 
   return (
-    <>
+    <div className="bg-white rounded-lg shadow-lg p-4 my-6">
       <h4 className='text-xl font-bold mt-4'>Settings</h4>
-      <p className='mb-2 ml-2 mt-6 text-lg'><b>Manage Module</b></p>
-      <div className="overflow-x-auto">
+      <p className='mb-2 ml-2 mt-6 text-lg'><b>Manage Customer</b></p>
+      <div className="overflow-x-auto bg-gray-50 rounded-md">
         <table className="table table-sm border-2">
           <thead>
             <tr>
@@ -148,7 +148,7 @@ const CustomerSetup = () => {
                 <td className='border-2'>{user.name}</td>
                 <td className='border-2'>{user.job}</td>
                 <td className='border-2'>{user.company}</td>
-                <td className='border-2'>{user.location}</td>
+                <td className='border-2'><div className='flex justify-between'>{user.location}<div className='w-5'><ClipboardDocumentIcon className='text-black'/></div></div></td>
                 <td className='border-2 text-center'>
                   <button onClick={() => handleEditClick(user)} className='border-2 rounded-lg m-0 p-2 bg-stone-300 font-semibold'>Edit User</button>
                 </td>
@@ -259,7 +259,7 @@ const CustomerSetup = () => {
               />
             </div>
             <div className='text-center'>
-              <button onClick={handleSaveNewUser} className= "bg-green-600 text-white rounded py-2 ml-0 mr-2 my-4 px-4 shadow-md hover:bg-green-800 w-1/2">Save User</button>
+              <button onClick={handleSaveNewUser} className= "bg-green-600 text-white rounded py-2 ml-0 mr-2 my-4 px-4 shadow-md hover:bg-green-800 w-1/2">Save Customer</button>
               <button onClick={handleCancelClick} className="bg-stone-800 text-white rounded m-2 py-2 ml-2 mr-0 my-4 px-4 shadow-md hover:bg-red-600 w-1/3">Cancel</button>
             </div>
           </div>
@@ -315,7 +315,7 @@ const CustomerSetup = () => {
 
         </div>
       </nav>
-    </>
+    </div>
   );
 };
 

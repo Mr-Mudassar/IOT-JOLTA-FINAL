@@ -49,7 +49,7 @@ const ModuleID2 = () => {
         <div className='flex flex-row justify-end flex-wrap m-0'>
           {/* Dropdown for selecting site */}
           <select
-            className="m-1 btn border-2 text-xs"
+            className="m-1 btn border-2 text-xs border-black text-center"
             value={selectedSite}
             onChange={handleOptionSelect}
           >
@@ -63,7 +63,7 @@ const ModuleID2 = () => {
 
           {/* Dropdown for selecting ID */}
           <select
-            className="m-1 btn border-2 text-xs"
+            className="m-1 btn border-2 text-xs  border-black text-center"
             value={selectedID}
             onChange={handleOptionSelect}
           >
@@ -88,7 +88,7 @@ const ModuleID2 = () => {
 
           <div key={user.id} className=' m-auto border-stone-200 bg-stone-100 rounded-lg py-4 px-6 mb-6 shadow-lg border-2 text-center'>
             <div className='flex flex-row justify-between mb-8 flex-wrap text-center'>
-              <div><p><b>ModuleID: </b>{user.id}</p></div>
+              <div><p><b>Module Id: </b>{user.id}</p></div>
               <div><p><b>Module: </b>{user.Module}</p></div>
               <div><p><b>Location: </b>{user.Location}</p></div>
             </div>

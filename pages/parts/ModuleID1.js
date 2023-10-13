@@ -29,7 +29,7 @@ const ModuleID1 = () => {
                 <p className="text-gray-700 text-xl mb-4 font-bold text-left mt-10 ml-4 ">Customer View</p>
 
                 <details className="dropdown mt-8">
-                    <summary className="m-1 btn text-xs">Search by Name<ChevronDownIcon className='w-4 h4' /></summary>
+                    <summary className="m-1 btn text-xs  border-2 border-black">Search by Name<ChevronDownIcon className='w-4 h4' /></summary>
                     <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-xl w-52 text-sm">
                         {data.map((heading, index) => (
                             <li key={index}><a>{heading.name}</a></li>
@@ -46,7 +46,7 @@ const ModuleID1 = () => {
   <div key={user.id} className=' m-auto border-stone-200 bg-stone-100 rounded-lg py-4 px-6 mb-6 shadow-lg border-2 text-center'>
 
                         <div className='flex flex-row justify-between mb-8 flex-wrap text-center'>
-                            <div><p><b>ModuleID: </b>{user.id}</p></div>
+                            <div><p><b>Module Id: </b>{user.id}</p></div>
                             <div><p><b>Module: </b>{user.Module}</p></div>
                             <div><p><b>Location: </b>{user.Location}</p></div>
                         </div>

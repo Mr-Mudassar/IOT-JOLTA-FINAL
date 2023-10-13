@@ -126,10 +126,10 @@ const ManageUser = () => {
   };
 
   return (
-    <>
+    <div className="bg-white rounded-lg shadow-lg p-4 my-6">
       <h4 className='text-xl font-bold mt-4'>Settings</h4>
       <p className='mb-2 ml-2 mt-6 text-lg'><b>Manage User</b></p>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto bg-gray-50 rounded-md">
         <table className="table table-sm border-2">
           <thead>
             <tr>
@@ -359,7 +359,7 @@ const ManageUser = () => {
 
         </div>
       </nav>
-    </>
+    </div>
   );
 };
 

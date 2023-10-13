@@ -51,54 +51,15 @@ const ModuleID3 = () => {
         setSelectedOption(e.target.value);
     };
 
-    // const barChartData = {
-    //     labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5'],
-    //     datasets: [
-    //         {
-    //             label: 'Bar Chart Data',
-    //             data: [20, 30, 40, 50, 60], // Replace with your data
-    //             backgroundColor: 'rgba(75, 192, 192, 0.5)', // Bar color
-    //             borderColor: 'rgba(75, 192, 192, 1)', // Border color
-    //             borderWidth: 1, // Border width
-    //         },
-    //     ],
-    // };
+ 
 
-    // const barChartOptions = {
-    //     scales: {
-    //         x: {
-    //             type: 'category',
-    //         },
-    //         y: {
-    //             beginAtZero: true,
-    //         },
-    //     },
-    // };
-
-
-    // Create chart data
     const lineChartDataOverall = {
         labels: ['12am', '01am', '02am', '03am', '04am', '05am', '06am', '07am', '08am', '09am', '10am', '11am', '12am', '01am', '02am', '03am', '04am', '05am', '06am', '07am', '08am'],
         datasets: filteredData.map((overall) => ({
             data: overall.graphDataVoltage, // Assuming user.graphData is an array of data points
-            borderColor: '#F9CC16',
-            borderWidth: 4,
-            pointRadius: 4,
-            pointBackgroundColor: 'rgba(75, 192, 192, 1)',
-        },
-        {
-            data: overall.graphDataCurrent, // Assuming user.graphData is an array of data points
-            borderColor: '#F9CC16',
-            borderWidth: 4,
-            pointRadius: 4,
-            pointBackgroundColor: 'rgba(75, 192, 192, 1)',
-        },
-        {
-            data: overall.graphDataTemperature, // Assuming user.graphData is an array of data points
             borderColor: 'red',
-            borderWidth: 4,
+            borderWidth: 3,
             pointRadius: 2,
-
         })),
     };
 
@@ -190,14 +151,14 @@ const ModuleID3 = () => {
 
             <div className='flex flex-row justify-between flex-wrap mt-4'>
 
-                <p className="text-gray-700 text-xl font-bold pt-2 pl-2">Site Name here</p>
+                <p className="text-gray-700 text-xl font-bold pt-2 pl-2">Single Module</p>
 
                 <div className='flex flex-row justify-end flex-wrap m-0'>
 
                     {/* Dropdown for selecting Customers */}
 
                     <select
-                        className="m-1 btn border-2 text-xs"
+                        className="m-1 btn border-2 text-xs border-black"
                         value={selectedOption}
                         onChange={handleOptionSelect}
                     >
@@ -211,7 +172,7 @@ const ModuleID3 = () => {
 
                     {/* Dropdown for selecting ID */}
                     <select
-                        className="m-1 btn border-2 text-xs"
+                        className="m-1 btn border-2 text-xs border-black"
                         value={selectedOption}
                         onChange={handleOptionSelect}
                     >

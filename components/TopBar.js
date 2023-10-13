@@ -2,7 +2,7 @@
 import { ChevronDoubleLeftIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/solid";
 import React, { useEffect, useState } from 'react';
 import { Fragment } from "react";
-import { Bars3CenterLeftIcon, PencilIcon, ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
+import { Bars3Icon, PencilIcon, ArrowLeftOnRectangleIcon } from "@heroicons/react/24/solid";
 import { BellIcon, CheckIcon } from "@heroicons/react/24/outline";
 import { Menu, Transition, Popover } from "@headlessui/react";
 import Link from "next/link";
@@ -79,7 +79,7 @@ export default function TopBar({ showNav, setShowNav }) {
         }`}
     >
       <div className="pl-4 md:pl-16">
-        <Bars3CenterLeftIcon
+        <Bars3Icon
           className="h-8 w-8 text-white cursor-pointer"
           onClick={() => setShowNav(!showNav)}
         />
@@ -162,7 +162,7 @@ export default function TopBar({ showNav, setShowNav }) {
                 <Menu.Item>
                   <Link
                     href="#"
-                    className="flex hover:bg-red-700 hover:text-black text-white rounded p-2 text-sm group transition-colors items-center bg-red-600 mt-2"
+                    className="flex hover:bg-red-500 hover:text-black text-white rounded p-2 text-sm group transition-colors items-center bg-red-600 mt-2"
                   >
                     <ArrowLeftOnRectangleIcon className="h-5 w-5 mr-2" />
                     <button onClick={handleLogOut}>LogOut</button>

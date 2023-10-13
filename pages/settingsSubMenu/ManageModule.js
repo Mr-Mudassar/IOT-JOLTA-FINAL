@@ -126,10 +126,10 @@ const ManageModule = () => {
   };
 
   return (
-    <>
+    <div className="bg-white rounded-lg shadow-lg p-4 my-6">
       <h4 className='text-xl font-bold mt-4'>Settings</h4>
       <p className='mb-2 ml-2 mt-6 text-lg'><b>Manage Module</b></p>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto bg-gray-50 rounded-md">
         <table className="table table-sm border-2">
           <thead>
             <tr>
@@ -303,7 +303,7 @@ const ManageModule = () => {
               />
             </div>
             <div className='text-center'>
-              <button onClick={handleSaveNewUser} className= "bg-green-600 text-white rounded py-2 ml-0 mr-2 my-4 px-4 shadow-md hover:bg-green-800 w-1/2">Save User</button>
+              <button onClick={handleSaveNewUser} className= "bg-green-600 text-white rounded py-2 ml-0 mr-2 my-4 px-4 shadow-md hover:bg-green-800 w-1/2">Save Module</button>
               <button onClick={handleCancelClick} className="bg-stone-800 text-white rounded m-2 py-2 ml-2 mr-0 my-4 px-4 shadow-md hover:bg-red-600 w-1/3">Cancel</button>
             </div>
           </div>
@@ -359,7 +359,7 @@ const ManageModule = () => {
 
         </div>
       </nav>
-    </>
+    </div>
   );
 };
 

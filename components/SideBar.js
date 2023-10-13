@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react";
 import Link from "next/link";
-import { GlobeAmericasIcon, UsersIcon, PresentationChartLineIcon, Cog8ToothIcon, ExclamationTriangleIcon, CircleStackIcon, PencilIcon, CreditCardIcon } from "@heroicons/react/24/solid";
+import { GlobeAmericasIcon, UsersIcon, PresentationChartLineIcon, Cog8ToothIcon, ExclamationTriangleIcon, CircleStackIcon, PencilIcon, CreditCardIcon, UserIcon } from "@heroicons/react/24/solid";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { useRouter } from "next/router";
@@ -194,7 +194,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                       : "text-white hover:bg-green-600 hover:text-white "
                       }`}
                   >
-                    <CreditCardIcon className="h-4 w-4 mr-2" />
+                    <UserIcon className="h-4 w-4 mr-2" />
                     Customer Setup
                   </Link>
                 </Menu.Item>
