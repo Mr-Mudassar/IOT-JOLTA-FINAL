@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react";
 import Link from "next/link";
-import { GlobeAmericasIcon, UsersIcon, PresentationChartLineIcon, Cog8ToothIcon, ExclamationTriangleIcon, CircleStackIcon, PencilIcon, CreditCardIcon, UserIcon } from "@heroicons/react/24/solid";
+import { GlobeAltIcon, UsersIcon, PresentationChartLineIcon, Cog8ToothIcon, ExclamationTriangleIcon, CircleStackIcon, PencilIcon, CreditCardIcon, UserIcon } from "@heroicons/react/24/solid";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { useRouter } from "next/router";
@@ -43,7 +43,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
               }`}
           >
             <div className="mr-2">
-              <GlobeAmericasIcon className="h-7 w-7" />
+              <GlobeAltIcon className="h-7 w-7" />
             </div>
             <div>
               <p className="mt-1">Global View</p>
