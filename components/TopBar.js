@@ -27,7 +27,7 @@ export default function TopBar({ showNav, setShowNav }) {
   const handleLogOut = async (e) => {
     e.preventDefault();
 
-    console.log('Log out function run')
+    window.location.reload();
 
     // try {
     //   const response = await fetch(baseApiUrl + '/admin/logOut', {
