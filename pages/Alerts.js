@@ -20,7 +20,7 @@ const Alerts = () => {
 
   return (
     <div className='p-4'>
-      <p className="text-gray-700 text-xl mb-6 font-bold text-left mt-10 ml-4">Alerts & Notifications</p>
+      <p className="text-gray-700 text-xl mb-6 font-bold text-left mt-4 ml-4">Alerts & Notifications</p>
       <div>
         {data.map((user) => (
           <div className='h-50 flex flex-col my-6 shadow-lg' key={user.id}>

@@ -150,7 +150,7 @@ const ModuleID3 = () => {
     return (
         <>
 
-            <div className='flex flex-row justify-between flex-wrap mt-4'>
+            <div className='flex flex-row justify-between flex-wrap mt-6'>
 
                 <p className="text-gray-700 text-xl font-bold pt-2 pl-2">Single Module</p>
 

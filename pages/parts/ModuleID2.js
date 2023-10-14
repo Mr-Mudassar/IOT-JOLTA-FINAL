@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SignalIcon, SignalSlashIcon, Battery50Icon, Battery0Icon, Battery100Icon, BoltIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
+import { SignalIcon, SignalSlashIcon, Battery50Icon, Battery0Icon, Battery100Icon, BoltIcon } from "@heroicons/react/24/solid";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGaugeSimpleHigh, faPlug, faTemperatureHalf } from '@fortawesome/free-solid-svg-icons';
 
@@ -44,18 +44,19 @@ const ModuleID2 = () => {
 
   return (
     <>
-      <div className='flex flex-row justify-between flex-wrap mt-4'>
+      <div className='flex flex-row justify-between flex-wrap mt-6'>
         <p className="text-gray-700 text-xl font-bold text-left pt-2 pl-2">Site View</p>
         <div className='flex flex-row justify-end flex-wrap m-0'>
+
           {/* Dropdown for selecting site */}
           <select
-            className="m-1 btn border-2 text-xs border-black text-center"
+            className="m-1 btn border-2 text-xs  border-black text-center"
             value={selectedSite}
             onChange={handleOptionSelect}
           >
-            <option value="All">Customer</option>
+            <option value="All">Customer </option>
             {data.map((user) => (
-              <option key={user.name} value={user.name}>
+              <option className="appearance-none rounded-lg " key={user.name} value={user.name}>
                 {user.name}
               </option>
             ))}

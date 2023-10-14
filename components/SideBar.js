@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react";
 import Link from "next/link";
-import { GlobeAltIcon, UsersIcon, PresentationChartLineIcon, Cog8ToothIcon, ExclamationTriangleIcon, CircleStackIcon, PencilIcon, CreditCardIcon, UserIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
+import { GlobeAltIcon, UsersIcon, PresentationChartLineIcon, Cog8ToothIcon, ExclamationTriangleIcon, CircleStackIcon, PencilIcon, CreditCardIcon, UserIcon } from "@heroicons/react/24/solid";
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { useRouter } from "next/router";
@@ -128,7 +128,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
         <Menu as="div" className="relative text-left">
           <div>
 
-            <Menu.Button className={`pl-6 py-3 mx-3 px-14 rounded text-left cursor-pointer mb-3 items-left      transition-colors   ${isSubmenuActive
+            <Menu.Button className={`pl-6 py-3 mx-3 px-6 rounded text-left cursor-pointer mb-3 items-left      transition-colors   ${isSubmenuActive
               ? "bg-green-600 text-green-900 font-bold"
               : "text-white hover:bg-green-600 hover:text-white "
               }`}>
@@ -139,7 +139,10 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                 <div>
                   <p className="flex justify-between">Settings</p>
                 </div>
-                  <ChevronDownIcon className="h-4 w-4 ml-2 mt-1.5 flex"/>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 mt-1 ml-10">
+                  <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+                </svg>
+
               </div>
             </Menu.Button>
 
@@ -166,7 +169,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
                       }`}
                   >
                     <PencilIcon className="h-4 w-4 mr-2" />
-                    Manage Users
+                    Manage User
                   </Link>
                 </Menu.Item>
 

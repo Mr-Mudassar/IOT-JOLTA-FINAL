@@ -92,7 +92,7 @@ export default function TopBar({ showNav, setShowNav }) {
 
         <Popover className="relative">
           <Popover.Button className="outline-none mr-5 md:mr-8 cursor-pointer text-white">
-            <BellIcon className="h-6 w-6" />
+            <BellIcon className="h-6 w-6 mt-2" />
           </Popover.Button>
           <Transition
             as={Fragment}
@@ -125,7 +125,7 @@ export default function TopBar({ showNav, setShowNav }) {
                   </div>
                 </div>
                 <div className='text-center flex justify-center mt-2'>
-                  <Link className="border rounded-full text-white px-4 py-1 flex" href="/Alerts"><span>See all</span> <span> <ChevronDoubleRightIcon className="w-4 mt-1 ml-1" /></span></Link>
+                  <Link className="border rounded-full text-white px-4 py-1 flex" href="/Alerts"><span>See all</span> <span> <ChevronDoubleRightIcon className="w-4 mt- ml-1" /></span></Link>
                 </div>
               </div>
             </Popover.Panel>
@@ -133,7 +133,7 @@ export default function TopBar({ showNav, setShowNav }) {
         </Popover>
         <Menu as="div" className="relative inline-block text-left z-40">
           <div>
-            <Menu.Button className="inline-flex w-full justify-center items-center">
+            <Menu.Button className="inline-flex w-full justify-center items-center mt-1.5">
               <picture>
                 <img
                   src="/user-profile.png"
@@ -142,7 +142,6 @@ export default function TopBar({ showNav, setShowNav }) {
                 />
               </picture>
 
-              {/* <ChevronDownIcon className="ml-2 h-4 w-4 text-white" /> */}
             </Menu.Button>
           </div>
           <Transition

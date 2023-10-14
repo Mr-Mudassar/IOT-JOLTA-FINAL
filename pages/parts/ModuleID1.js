@@ -26,16 +26,20 @@ const ModuleID1 = () => {
         <>
             <div className='flex flex-row justify-between'>
 
-                <p className="text-gray-700 text-xl mb-4 font-bold text-left mt-10 ml-4 ">Customer View</p>
+                <p className="text-gray-700 text-xl mb-4 font-bold text-left mt-8 ml-4">Customer View</p>
 
-                <details className="dropdown mt-8">
-                    <summary className="m-1 btn text-xs  border-2 border-black">Search by Name<ChevronDownIcon className='w-4 h4' /></summary>
-                    <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-xl w-52 text-sm">
-                        {data.map((heading, index) => (
-                            <li key={index}><a>{heading.name}</a></li>
-                        ))}
-                    </ul>
-                </details>
+                {/* Dropdown for selecting site */}
+                <select
+                    className="m-1 mt-6 btn border-2 text-xs  border-black text-center"
+                    value={selectedSite}
+                >
+                    <option value="All">Customer </option>
+                    {data.map((user) => (
+                        <option className="appearance-none rounded-lg " key={user.name}>
+                            {user.name}
+                        </option>
+                    ))}
+                </select>
 
             </div>
             <div className='bg-white rounded-xl p-4 border-2 border-stone-200 shadow-lg'>
@@ -43,7 +47,7 @@ const ModuleID1 = () => {
 
                 <hr className='mb-4 mx-4'></hr>
                 {data.map((user) => (
-  <div key={user.id} className=' m-auto border-stone-200 bg-stone-100 rounded-lg py-4 px-6 mb-6 shadow-lg border-2 text-center'>
+                    <div key={user.id} className=' m-auto border-stone-200 bg-stone-100 rounded-lg py-4 px-6 mb-6 shadow-lg border-2 text-center'>
 
                         <div className='flex flex-row justify-between mb-8 flex-wrap text-center'>
                             <div><p><b>Module Id: </b>{user.id}</p></div>
