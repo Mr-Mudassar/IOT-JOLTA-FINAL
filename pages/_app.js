@@ -20,18 +20,18 @@ function MyApp({ Component, pageProps }) {
           <Component {...pageProps} />
         </Layout>
       ) : (
-        <div>
-           <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
-      <div className="w-full p-6 bg-white rounded-md shadow-md lg:max-w-xl md:max-w-xl sm:max-w-xl">
-        <div className="flex justify-center">
-          <Image
+      <div>
+        <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden mx-4">
+         <div className="w-full p-6 bg-white rounded-md shadow-md lg:max-w-xl md:max-w-xl sm:max-w-xl">
+          <div className="flex justify-center">
+           <Image
             src= '/jolta-battery-logo-2.png'
             alt="jolta logo"
             width={250}
             height={150} 
-          />
-        </div>
-        <form className="mt-6" onSubmit={toggleContent}>
+            />
+          </div>
+          <form className="mt-6" onSubmit={toggleContent}>
           <div className="mb-4">
             <label
               htmlFor="email"

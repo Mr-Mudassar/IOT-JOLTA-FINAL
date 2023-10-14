@@ -167,7 +167,7 @@ const ManageModule = () => {
 
       {editingUser && (
           <div className="fixed inset-0 flex items-center justify-center bg-stone-700 bg-opacity-50 z-50">
-          <div className="bg-white p-4 rounded-md shadow-md shadow-black border border-stone-800">
+          <div className="bg-white p-4 rounded-md shadow-md shadow-black border border-stone-800 mx-2">
             <h4 className='text-xl font-bold mb-4 text-center'>Edit Module</h4>
             <div className='m-4'>
               <label className='font-semibold'>Customer Name: </label>
@@ -239,8 +239,8 @@ const ManageModule = () => {
 
       {/* Adding new user  */}
       {showAddUserPopup && (
-          <div className="fixed inset-0 flex items-center justify-center bg-stone-700 bg-opacity-50 z-50">
-          <div className="bg-white p-4 rounded-md shadow-md shadow-black border border-stone-800">
+          <div className="fixed inset-0 flex items-center justify-center bg-stone-700 bg-opacity-50 z-50 ">
+          <div className="bg-white p-4 rounded-md shadow-md shadow-black border border-stone-800 mx-2">
             <h4 className='text-xl font-bold mb-4 text-center'>Add New Module</h4>
             <div className='m-4'>
               <label className='font-semibold'>Customer Name: </label>
@@ -321,6 +321,7 @@ const ManageModule = () => {
                 <ChevronDoubleLeftIcon className="w-4 h-4" />
               </a>
             </li>
+            <div className='hidden sm:block md:block lg:block xl:block'></div>
             {numbers.map((num) => (
               <li className={`text-xs rounded-3xl px-3 py-2 page-item ${currentPage === num ? 'bg-green-500' : ''}`} key={num}>
                 <a
@@ -335,6 +336,7 @@ const ManageModule = () => {
                 <li> . . . . . </li>
               </>
             )}
+            <div/>
             <li className='page-item p-2'>
               <a className='page-link font-semibold' onClick={nextPage}>
                 <ChevronDoubleRightIcon className="w-4 h-4" />

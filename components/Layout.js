@@ -47,11 +47,11 @@ export default function Layout({ children }) {
         <SideBar showNav={showNav} />
       </Transition>
       <main
-        className={`pt-16 transition-all duration-[400ms] ${
+        className={`bg-stone-100 pt-16 transition-all duration-[400ms] ${
           showNav && !isMobile ? "pl-56" : ""
         }`}
       >
-        <div className="px-2 md:px-10">{children}</div>
+        <div className="px-2 md:px-10 ">{children}</div>
       </main>
     </>
   );

@@ -162,7 +162,7 @@ const CustomerSetup = () => {
       </div>
 
       {editingUser && (
-          <div className="fixed inset-0 flex items-center justify-center bg-stone-700 bg-opacity-50 z-50">
+          <div className="fixed inset-0 flex items-center justify-center bg-stone-700 bg-opacity-50 z-50 mx-2">
           <div className="bg-white p-4 rounded-md shadow-md shadow-black border border-stone-800">
             <h4 className='text-xl font-bold mb-4 text-center'>Edit Customer</h4>
             <div className='m-4'>
@@ -215,7 +215,7 @@ const CustomerSetup = () => {
 
       {/* Adding new user  */}
       {showAddUserPopup && (
-          <div className="fixed inset-0 flex items-center justify-center bg-stone-700 bg-opacity-50 z-50">
+          <div className="fixed inset-0 flex items-center justify-center bg-stone-700 bg-opacity-50 z-50 mx-2">
           <div className="bg-white p-4 rounded-md shadow-md shadow-black border border-stone-800">
             <h4 className='text-xl font-bold mb-4 text-center'>Add New Customer</h4>
             <div className='m-4'>
@@ -277,6 +277,7 @@ const CustomerSetup = () => {
                 <ChevronDoubleLeftIcon className="w-4 h-4" />
               </a>
             </li>
+            <div className='hidden sm:block md:block lg:block xl:block'>
             {numbers.map((num) => (
               <li className={`text-xs rounded-3xl px-3 py-2 page-item ${currentPage === num ? 'bg-green-500' : ''}`} key={num}>
                 <a
@@ -291,6 +292,7 @@ const CustomerSetup = () => {
                 <li> . . . . . </li>
               </>
             )}
+            </div>
             <li className='page-item p-2'>
               <a className='page-link font-semibold' onClick={nextPage}>
                 <ChevronDoubleRightIcon className="w-4 h-4" />
