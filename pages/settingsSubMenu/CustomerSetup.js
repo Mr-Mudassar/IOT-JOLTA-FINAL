@@ -217,7 +217,7 @@ const CustomerSetup = () => {
       {showAddUserPopup && (
           <div className="fixed inset-0 flex items-center justify-center bg-stone-700 bg-opacity-50 z-50">
           <div className="bg-white p-4 rounded-md shadow-md shadow-black border border-stone-800">
-            <h4 className='text-xl font-bold mb-4 text-center'>Add New User</h4>
+            <h4 className='text-xl font-bold mb-4 text-center'>Add New Customer</h4>
             <div className='m-4'>
               <label className='font-semibold'>Long Name: </label>
               <input
