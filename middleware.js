@@ -16,6 +16,4 @@ export function middleware(request) {
   
   // Continue processing for other routes
   return NextResponse.next();
-
-
 }
