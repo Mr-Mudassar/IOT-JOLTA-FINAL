@@ -124,10 +124,8 @@ const SideBar = forwardRef(({ showNav }, ref) => {
         </Link>
 
         {/* Drop down menu of Setting Menu  */}
-
         <Menu as="div" className="relative text-left">
           <div>
-
             <Menu.Button className={`pl-6 py-3 mx-3 px-6 rounded text-left cursor-pointer mb-3 items-left      transition-colors   ${isSubmenuActive
               ? "bg-green-600 text-green-900 font-bold"
               : "text-white hover:bg-green-600 hover:text-white "

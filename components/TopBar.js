@@ -125,7 +125,7 @@ export default function TopBar({ showNav, setShowNav }) {
                   </div>
                 </div>
                 <div className='text-center flex justify-center mt-2'>
-                  <Link className="border rounded-full text-white px-4 py-1 flex" href="/Alerts"><span>See all</span> <span> <ChevronDoubleRightIcon className="w-4 mt- ml-1" /></span></Link>
+                  <Link className="border rounded-full text-white px-4 py-1 flex" href="/Alerts"><span>See all</span> <span> <ChevronDoubleRightIcon className="w-4 mt-1 ml-1" /></span></Link>
                 </div>
               </div>
             </Popover.Panel>
