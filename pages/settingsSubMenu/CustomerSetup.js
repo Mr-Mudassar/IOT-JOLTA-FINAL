@@ -18,7 +18,7 @@ const CustomerSetup = () => {
     };
     fetchData();
   }, []);
-     
+
 
   const handleEditClick = (user) => {
     setEditingUser(user);
@@ -89,7 +89,7 @@ const CustomerSetup = () => {
     setShowAddUserPopup(true);
   };
 
-  const [currentPage, setCurrentPaga] = useState(1)
+  const [currentPage, setCurrentpage] = useState(1)
   const recordsPerPage = 5;
   const lastIndex = currentPage * recordsPerPage;
   const firstIndex = lastIndex - recordsPerPage;
@@ -103,18 +103,18 @@ const CustomerSetup = () => {
 
   function nextPage() {
     if (currentPage !== firstIndex && currentPage < npage) {
-      setCurrentPaga(currentPage + 1)
+      setCurrentpage(currentPage + 1)
     }
   }
 
   function prePage() {
     if (currentPage !== firstIndex + 1) {
-      setCurrentPaga(currentPage - 1)
+      setCurrentpage(currentPage - 1)
     }
   }
 
   function changeCpage(pageNumber) {
-    setCurrentPaga(pageNumber);
+    setCurrentpage(pageNumber);
   }
 
 
@@ -122,7 +122,27 @@ const CustomerSetup = () => {
 
   const handlePageChange = (event) => {
     const newSelectedPage = parseInt(event.target.value, 10);
-    setCurrentPaga(newSelectedPage); // Update the current page when the dropdown changes
+    setCurrentpage(newSelectedPage); // Update the current page when the dropdown changes
+  };
+
+  const [copySuccess, setCopySuccess] = useState(false);
+
+  const copyToClipboard = (textToCopy) => {
+    // Use the Clipboard API to copy the text to the clipboard
+    navigator.clipboard.writeText(textToCopy)
+      .then(() => {
+        console.log('Text copied to clipboard:', textToCopy);
+        setCopySuccess(true);
+
+        // Automatically hide the notification after 2 seconds
+        setTimeout(() => {
+          setCopySuccess(false);
+        }, 2000);
+      })
+      .catch((err) => {
+        console.error('Failed to copy text to clipboard:', err);
+        // Handle the error here
+      });
   };
 
   return (
@@ -148,7 +168,14 @@ const CustomerSetup = () => {
                 <td className='border-2'>{user.name}</td>
                 <td className='border-2'>{user.job}</td>
                 <td className='border-2'>{user.company}</td>
-                <td className='border-2'><div className='flex justify-between'>{user.location}<div className='w-5'><ClipboardDocumentIcon className='text-green-600'/></div></div></td>
+                <td className='border-2'>
+                  <div className='flex justify-between'>
+                    {user.location}
+                    <div className='w-5' onClick={() => copyToClipboard(user.location)} style={{ cursor: 'pointer' }}>
+                      <ClipboardDocumentIcon className='text-green-600' />
+                    </div>
+                  </div>
+                </td>
                 <td className='border-2 text-center'>
                   <button onClick={() => handleEditClick(user)} className='border-2 rounded-lg m-0 p-2 bg-stone-300 font-semibold'>Edit User</button>
                 </td>
@@ -157,12 +184,13 @@ const CustomerSetup = () => {
           </tbody>
         </table>
       </div>
+      {copySuccess && <div className="text-green-600 text-center py-2 bg-stone-50 rounded text-semibold">Copied to clipboard</div>}
       <div className='bg-green-500 text-md text-center'>
         <button onClick={showAddUser} className='text-white p-3'>Add New Customer +</button>
       </div>
 
       {editingUser && (
-          <div className="fixed inset-0 flex items-center justify-center bg-stone-700 bg-opacity-50 z-50 mx-2">
+        <div className="fixed inset-0 flex items-center justify-center bg-stone-700 bg-opacity-50 z-50 mx-2">
           <div className="bg-white p-4 rounded-md shadow-md shadow-black border border-stone-800">
             <h4 className='text-xl font-bold mb-4 text-center'>Edit Customer</h4>
             <div className='m-4'>
@@ -206,7 +234,7 @@ const CustomerSetup = () => {
               />
             </div>
             <div className='text-center'>
-              <button onClick={handleSaveClick} className= "bg-green-600 text-white rounded py-2 ml-0 mr-2 my-4 px-4 shadow-md hover:bg-green-800 w-1/2">Save</button>
+              <button onClick={handleSaveClick} className="bg-green-600 text-white rounded py-2 ml-0 mr-2 my-4 px-4 shadow-md hover:bg-green-800 w-1/2">Save</button>
               <button onClick={handleCancelClick} className="bg-stone-800 text-white rounded m-2 py-2 ml-2 mr-0 my-4 px-4 shadow-md hover:bg-red-600 w-1/3">Cancel</button>
             </div>
           </div>
@@ -215,7 +243,7 @@ const CustomerSetup = () => {
 
       {/* Adding new user  */}
       {showAddUserPopup && (
-          <div className="fixed inset-0 flex items-center justify-center bg-stone-700 bg-opacity-50 z-50 mx-2">
+        <div className="fixed inset-0 flex items-center justify-center bg-stone-700 bg-opacity-50 z-50 mx-2">
           <div className="bg-white p-4 rounded-md shadow-md shadow-black border border-stone-800">
             <h4 className='text-xl font-bold mb-4 text-center'>Add New Customer</h4>
             <div className='m-4'>
@@ -259,7 +287,7 @@ const CustomerSetup = () => {
               />
             </div>
             <div className='text-center'>
-              <button onClick={handleSaveNewUser} className= "bg-green-600 text-white rounded py-2 ml-0 mr-2 my-4 px-4 shadow-md hover:bg-green-800 w-1/2">Save Customer</button>
+              <button onClick={handleSaveNewUser} className="bg-green-600 text-white rounded py-2 ml-0 mr-2 my-4 px-4 shadow-md hover:bg-green-800 w-1/2">Save Customer</button>
               <button onClick={handleCancelClick} className="bg-stone-800 text-white rounded m-2 py-2 ml-2 mr-0 my-4 px-4 shadow-md hover:bg-red-600 w-1/3">Cancel</button>
             </div>
           </div>
@@ -278,20 +306,20 @@ const CustomerSetup = () => {
               </a>
             </li>
             <div className='hidden sm:block md:block lg:block xl:block'>
-            {numbers.map((num) => (
-              <li className={`text-xs rounded-3xl px-3 py-2 page-item ${currentPage === num ? 'bg-green-500' : ''}`} key={num}>
-                <a
-                  className='page-item cursor-pointer'
-                  onClick={() => changeCpage(num)}>
-                  {num}
-                </a>
-              </li>
-            ))}
-            {npage > 5 && (
-              <>
-                <li> . . . . . </li>
-              </>
-            )}
+              {numbers.map((num) => (
+                <li className={`text-xs rounded-3xl px-3 py-2 page-item ${currentPage === num ? 'bg-green-500 text-white' : ''}`} key={num}>
+                  <a
+                    className='page-item cursor-pointer'
+                    onClick={() => changeCpage(num)}>
+                    {num}
+                  </a>
+                </li>
+              ))}
+              {npage > 5 && (
+                <>
+                  <li> . . . . . </li>
+                </>
+              )}
             </div>
             <li className='page-item p-2'>
               <a className='page-link font-semibold' onClick={nextPage}>

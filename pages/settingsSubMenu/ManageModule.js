@@ -323,7 +323,7 @@ const ManageModule = () => {
             </li>
             <div className='hidden sm:block md:block lg:block xl:block'></div>
             {numbers.map((num) => (
-              <li className={`text-xs rounded-3xl px-3 py-2 page-item ${currentPage === num ? 'bg-green-500' : ''}`} key={num}>
+              <li className={`text-xs rounded-3xl px-3 py-2 page-item ${currentPage === num ? 'bg-green-500 text-white' : ''}`} key={num}>
                 <a
                   className='page-item cursor-pointer'
                   onClick={() => changeCpage(num)}>
