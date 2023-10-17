@@ -8,7 +8,7 @@ import { Fragment } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
-const SideBar = forwardRef(({ showNav }, ref) => {
+const SideBar = forwardRef(({ closeSidebar }, ref) => {
   const router = useRouter();
 
   // Setting sub menu styling applying logic
@@ -17,7 +17,6 @@ const SideBar = forwardRef(({ showNav }, ref) => {
     router.pathname === "/settingsSubMenu/CustomerSetup" ||
     router.pathname === "/settingsSubMenu/ManageUser" ||
     router.pathname === "/settingsSubMenu/ManageModule";
-
 
   return (
     <div ref={ref} className="fixed w-56 h-full bg-stone-800 shadow-sm z-50">
@@ -35,7 +34,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
 
         {/* Global view menu    */}
 
-        <Link href="/">
+        <Link href="/"   onClick={() => closeSidebar()}>
           <div
             className={`pl-6 py-3 mx-3 rounded text-left cursor-pointer mb-3 flex items-left transition-colors  ${router.pathname == "/"
               ? "bg-green-600 text-green-900 font-bold"
@@ -53,7 +52,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
 
         {/* Customer View menu */}
 
-        <Link href="/customerView">
+        <Link href="/customerView"   onClick={() => closeSidebar()}>
           <div
             className={`pl-6 py-3 mx-3 rounded text-left cursor-pointer mb-3 flex items-left transition-colors ${router.pathname == "/customerView"
               ? "bg-green-600 text-green-900 font-bold"
@@ -71,7 +70,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
 
         {/* Site View menu  */}
 
-        <Link href="/siteView">
+        <Link href="/siteView"   onClick={() => closeSidebar()}>
           <div
             className={`pl-6 py-3 mx-3 rounded text-left cursor-pointer mb-3 flex items-left transition-colors ${router.pathname == "/siteView"
               ? "bg-green-600 text-green-900 font-bold"
@@ -89,7 +88,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
 
         {/* Single Module menu  */}
 
-        <Link href="/singleModule">
+        <Link href="/singleModule"   onClick={() => closeSidebar()}>
           <div
             className={`pl-6 py-3 mx-3 rounded text-left cursor-pointer mb-3 flex items-left transition-colors ${router.pathname == "/singleModule"
               ? "bg-green-600 text-green-900 font-bold"
@@ -107,7 +106,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
 
         {/* Alerts menu */}
 
-        <Link href="/Alerts">
+        <Link href="/Alerts"   onClick={() => closeSidebar()}>
           <div
             className={`pl-6 py-3 mx-3 rounded text-left cursor-pointer mb-3 flex items-left transition-colors ${router.pathname == "/Alerts"
               ? "bg-green-600 text-green-900 font-bold"
@@ -160,6 +159,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
 
                 <Menu.Item>
                   <Link
+                    onClick={() => closeSidebar()}
                     href="/settingsSubMenu/ManageUser"
                     className={`flex hover:bg-green-600 hover:text-white text-white rounded p-2 text-sm group transition-colors items-center mb-2 ${router.pathname == "/settingsSubMenu/ManageUser"
                       ? "bg-green-600 text-green-900 font-bold"
@@ -175,6 +175,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
 
                 <Menu.Item>
                   <Link
+                    onClick={() => closeSidebar()}
                     href="/settingsSubMenu/ManageModule"
                     className={`flex hover:bg-green-600 hover:text-white text-white rounded p-2 text-sm group transition-colors items-center mb-2 ${router.pathname == "/settingsSubMenu/ManageModule"
                       ? "bg-green-600 text-green-900 font-bold"
@@ -190,6 +191,7 @@ const SideBar = forwardRef(({ showNav }, ref) => {
 
                 <Menu.Item>
                   <Link
+                    onClick={() => closeSidebar()}
                     href="/settingsSubMenu/CustomerSetup"
                     className={`flex hover:bg-green-600 hover:text-white text-white rounded p-2 text-sm group transition-colors items-center mb-2 ${router.pathname == "/settingsSubMenu/CustomerSetup"
                       ? "bg-green-600 text-green-900 font-bold"
