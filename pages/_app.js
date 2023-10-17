@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-function MyApp({ Component, pageProps, closeSidebar }) {
+function MyApp({ Component, pageProps }) {
 
   const [showContent, setShowContent] = useState(false);
 
@@ -13,27 +13,6 @@ function MyApp({ Component, pageProps, closeSidebar }) {
     setShowContent(!showContent);
   };
 
-    // Add a click event listener to close the sidebar on mobile devices
-    useEffect(() => {
-      const handleMobileClick = (e) => {
-        if (showContent) {
-          // Check if the sidebar is open and the click is outside of it
-          const sidebarElement = document.querySelector(".fixed.w-56.h-full.bg-stone-800");
-          if (sidebarElement && !sidebarElement.contains(e.target)) {
-            closeSidebar(); // Close the sidebar
-          }
-        }
-      };
-  
-      if (showContent && window.innerWidth <= 768) {
-        // Attach the event listener when the sidebar is open and on mobile devices
-        document.addEventListener("click", handleMobileClick);
-      }
-  
-      return () => {
-        document.removeEventListener("click", handleMobileClick);
-      };
-    }, [showContent, closeSidebar]);
 
   return (
     <div>
